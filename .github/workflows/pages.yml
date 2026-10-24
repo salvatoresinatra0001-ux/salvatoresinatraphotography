@@ -22,7 +22,12 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir -p _site
-          cp index.html CNAME .nojekyll _site/
+          cp *.html CNAME .nojekyll robots.txt sitemap.xml _site/
+          cp -R assets _site/
+          test -s _site/assets/official-social-links.js
+          test -s _site/assets/ss-visual-theme.js
+          test -s _site/assets/ss-visual-theme.css
+          test -s _site/biografia.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
