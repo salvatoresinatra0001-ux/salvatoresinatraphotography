@@ -58,3 +58,15 @@ html[data-ss-theme="light"] #ss-photo-gallery-v10 figure{background:#eeede8;bord
 html[data-ss-theme="light"] #ss-photo-gallery-v10 .ss11-photo-trigger img{background:#e5e4df}
 html[data-ss-theme="light"] #ss-photo-gallery-v10 figcaption{color:#33332f}
 html[data-ss-theme="light"] .ss11-progress{background:#222}
+
+/* V11.3 — reserve interactive area for native lazy-loading images.
+   Original images and intrinsic aspect ratios are never cropped. */
+#ss-photo-gallery-v10 .ss11-photo-trigger{
+  min-height:clamp(180px,26vw,310px);
+  display:grid;
+  place-items:center;
+}
+#ss-photo-gallery-v10 .ss11-photo-trigger img{
+  object-fit:contain;
+  max-height:580px;
+}
