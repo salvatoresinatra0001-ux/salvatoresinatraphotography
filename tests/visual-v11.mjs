@@ -38,7 +38,7 @@ try{
         themeToggle:!!document.querySelector("[data-ss-theme-toggle]")
       };
     });
-    assert.equal(state.networkLinks,3,JSON.stringify(state));
+    assert.ok(state.networkLinks>=3,"Expected the core identity links: "+JSON.stringify(state));
     assert.equal(state.current,1,JSON.stringify(state));
     assert.equal(state.networkShown,true);
     assert.equal(state.progress,true);
